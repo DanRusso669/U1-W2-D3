@@ -128,7 +128,7 @@ for (i = 0; i < starWarsCharacters.length; i++) {
   const character = starWarsCharacters[i];
   // console.log(character);
   if (character.gender === "female") {
-    femaleCharacters.push(character.name);
+    femaleCharacters.push(character);
   }
 }
 console.log(femaleCharacters);
