@@ -216,13 +216,20 @@ if (crewMass <= 500) {
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
 
-for (i = 0; i < starWarsCharacters.length; i++) {
-  let gender = starWarsCharacters[i].gender;
-  if (gender === "n/a") {
-    delete starWarsCharacters[i].gender;
-    starWarsCharacters[i].gender = "robot";
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i];
+  if (character.gender === "n/a") {
+    character.gender = "robot";
   }
 }
+
+// for (i = 0; i < starWarsCharacters.length; i++) {
+//   let gender = starWarsCharacters[i].gender;
+//   if (gender === "n/a") {
+//     // delete starWarsCharacters[i].gender;
+//     // starWarsCharacters[i].gender = "robot";
+//   }
+// }
 for (i = 0; i < starWarsCharacters.length; i++) {
   let hair = starWarsCharacters[i].hair_color;
   if (hair === "n/a") {
@@ -236,12 +243,28 @@ console.log(starWarsCharacters);
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
 console.log(charactersNames.length);
-for (i = 0; i < charactersNames.length; i++) {
-  if (charactersNames[i] === femaleCharacters[0] || charactersNames[i] === femaleCharacters[1]) {
-    charactersNames.splice(i, 1);
+// for (i = 0; i < charactersNames.length; i++) {
+//   if (charactersNames[i] === femaleCharacters[0] || charactersNames[i] === femaleCharacters[1]) {
+//     charactersNames.splice(i, 1);
+//   }
+// }
+// console.log(charactersNames.length);
+
+for (i = 0; i < femaleCharacters.length; i++) {
+  const femCharName = femaleCharacters[i].name;
+  console.log(femCharName);
+  for (j = 0; j < charactersNames.length; j++) {
+    const charName = charactersNames[j];
+
+    if (femCharName === charName) {
+      charactersNames.splice(j, 1);
+    }
   }
 }
 console.log(charactersNames.length);
+console.log(charactersNames);
+console.log(femaleCharacters);
+
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
